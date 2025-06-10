@@ -1,0 +1,505 @@
+  body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background-color: #00b978;
+      padding: 15px 20px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    header h1 {
+      margin: 0;
+      font-family: 'Nothing You Could Do', cursive;
+      font-size: 1.8rem;
+    }
+   nav a {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: "Nothing You Could Do", cursive;
+  font-style: normal;
+  display: inline-block; /* Ajuda a controlar padding/margem sem que quebre layout */
+  transition: all 0.2s ease; /* Suaviza mudanças */
+  padding: 5px;
+    font-size: 20px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  background-color: #00b07e;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  border-radius: 2px;
+
+}
+
+
+    }
+    .pesquisa-container {
+      margin-top: 10px;
+      width: 100%;
+      max-width: 400px;
+  
+    }
+    #barra-pesquisa {
+      width: 80%;
+      padding: 8px;
+      border-radius: 4px 0 0 4px;
+      border: none;
+      font-size: 1rem;
+      border-radius: 4px 5px 5px 4px;
+             border: none;
+  outline: none;
+      
+    }
+    #form-pesquisa button {
+      padding: 6.8px;
+      border: none;
+      border-radius: 0 4px 4px 0;
+      background-color: #007a58;
+      color: white;
+      cursor: pointer;
+      font-size: 1rem;
+      position: absolute;
+      right: 45px;
+
+    }
+    main {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    .produtos {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .produto {
+      background: white;
+      border-radius: 10px;
+      width: 240px;
+      padding: 15px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .produto img {
+      max-width: 100%;
+      border-radius: 8px;
+      height: 170px;
+      object-fit: contain;
+      margin-bottom: 12px;
+    }
+    .produto h2 {
+      margin: 8px 0 5px;
+      font-size: 1.3rem;
+    }
+    .produto p {
+      font-size: 1rem;
+      color: #666;
+      flex-grow: 1;
+    }
+    .produto span {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #00b978;
+      margin: 12px 0;
+    }
+    .produto button {
+      background-color: #00b978;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 12px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+    .produto button:hover {
+      background-color: #36ce99;
+    }
+
+    /* Tela compra */
+    #tela-compra {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.15);
+      padding: 30px;
+      max-width: 500px;
+      margin: 40px auto 80px;
+      display: none;
+      text-align: center;
+      position: relative;
+    }
+    #tela-compra button#voltar {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+           color: rgb(173, 171, 171);
+      font-weight: bold;
+
+      border-radius: 5px;
+      padding: 10px;
+    }
+    #tela-compra button#voltar:hover {
+      transition: 0.3s;
+      color: #00744c;
+      color: rgb(212, 212, 212);
+    }
+    #tela-compra h2 {
+      margin-top: 0;
+      font-family: 'Nothing You Could Do', cursive;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+    #tela-compra img {
+      max-width: 250px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      object-fit: contain;
+      height: 250px;
+    }
+    #tela-compra p {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 20px;
+    }
+    #tela-compra span {
+      display: block;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #00b978;
+      margin-bottom: 25px;
+    }
+    #form-compra input[type="text"],
+    #form-compra input[type="email"] {
+      width: 90%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+    #form-compra button[type="submit"] {
+      background-color: #00b978;
+      border: none;
+      color: white;
+      padding: 14px 20px;
+      font-size: 1.2rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 95%;
+    }
+    #form-compra button[type="submit"]:hover {
+      background-color: #36ce99;
+    }
+/* Estilo base para a janela de detalhes */
+#detalhes-produto {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  z-index: 999;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 90%;
+  max-height: 90%;
+  overflow-y: auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 500px) {
+  #detalhes-produto {
+    width: 95%;
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+
+  #detalhes-produto img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  #detalhes-produto button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+  }
+}
+body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background-color: #00b978;
+      padding: 15px 20px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    header h1 {
+      margin: 0;
+      font-family: 'Nothing You Could Do', cursive;
+      font-size: 1.8rem;
+    }
+   nav a {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: "Nothing You Could Do", cursive;
+  font-style: normal;
+  display: inline-block; /* Ajuda a controlar padding/margem sem que quebre layout */
+  transition: all 0.2s ease; /* Suaviza mudanças */
+  padding: 5px;
+    font-size: 20px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  background-color: #00b07e;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  border-radius: 2px;
+
+}
+
+
+    }
+    .pesquisa-container {
+      margin-top: 10px;
+      width: 100%;
+      max-width: 400px;
+  
+    }
+    #barra-pesquisa {
+      width: 80%;
+      padding: 8px;
+      border-radius: 4px 0 0 4px;
+      border: none;
+      font-size: 1rem;
+      border-radius: 4px 5px 5px 4px;
+             border: none;
+  outline: none;
+      
+    }
+    #form-pesquisa button {
+      padding: 6.8px;
+      border: none;
+      border-radius: 0 4px 4px 0;
+      background-color: #007a58;
+      color: white;
+      cursor: pointer;
+      font-size: 1rem;
+      position: absolute;
+      right: 45px;
+
+    }
+    main {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    .produtos {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .produto {
+      background: white;
+      border-radius: 10px;
+      width: 240px;
+      padding: 15px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .produto img {
+      max-width: 100%;
+      border-radius: 8px;
+      height: 170px;
+      object-fit: contain;
+      margin-bottom: 12px;
+    }
+    .produto h2 {
+      margin: 8px 0 5px;
+      font-size: 1.3rem;
+    }
+    .produto p {
+      font-size: 1rem;
+      color: #666;
+      flex-grow: 1;
+    }
+    .produto span {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #00b978;
+      margin: 12px 0;
+    }
+    .produto button {
+      background-color: #00b978;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 12px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+    .produto button:hover {
+      background-color: #36ce99;
+    }
+
+    /* Tela compra */
+    #tela-compra {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.15);
+      padding: 30px;
+      max-width: 500px;
+      margin: 40px auto 80px;
+      display: none;
+      align-items: center; /* Alinha itens verticalmente */
+      text-align: center;
+      position: relative;
+    }
+    #tela-compra button#voltar {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+           color: rgb(173, 171, 171);
+      font-weight: bold;
+
+      border-radius: 5px;
+      padding: 10px;
+    }
+    #tela-compra button#voltar:hover {
+      transition: 0.3s;
+      color: #00744c;
+      color: rgb(212, 212, 212);
+    }
+    #tela-compra h2 {
+      margin-top: 0;
+      font-family: 'Nothing You Could Do', cursive;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+    #tela-compra img {
+      max-width: 250px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      object-fit: contain;
+      height: 250px;
+    }
+    #tela-compra p {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 20px;
+    }
+    #tela-compra span {
+      display: block;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #00b978;
+      margin-bottom: 25px;
+    }
+    #form-compra input[type="text"],
+    #form-compra input[type="email"] {
+      width: 90%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+    #form-compra button[type="submit"] {
+      background-color: #00b978;
+      border: none;
+      color: white;
+      padding: 14px 20px;
+      font-size: 1.2rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 95%;
+    }
+    #form-compra button[type="submit"]:hover {
+      background-color: #36ce99;
+    }
+
+/* Responsividade para a tela de compra em celulares */
+@media (max-width: 600px) {
+  #tela-compra {
+    display: none; /* Mantém escondido por padrão */
+    flex-direction: column; /* Organiza os itens em coluna */
+    width: 90%; /* Ocupa 90% da largura da tela */
+    padding: 20px 15px; /* Reduz o espaçamento interno */
+    margin: 20px auto;
+    max-height: 90vh; /* Altura máxima para não ocupar a tela toda */
+    overflow-y: auto; /* Adiciona rolagem se o conteúdo for maior */
+  }
+
+  #tela-compra img#produto-img {
+    max-width: 180px; /* Diminui o tamanho da imagem */
+    height: 180px;
+    margin-bottom: 15px;
+    align-self: center; /* Centraliza a imagem no layout de coluna */
+  }
+
+  #tela-compra h2#produto-nome {
+    font-size: 1.6rem; /* Reduz o tamanho da fonte do título */
+  }
+  
+  #tela-compra div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #tela-compra p#produto-descricao {
+    font-size: 1rem; /* Ajusta o tamanho da fonte da descrição */
+  }
+
+  #tela-compra span#produto-preco {
+    font-size: 1.4rem; /* Ajusta o tamanho da fonte do preço */
+    margin-bottom: 20px;
+  }
+
+  #form-compra button[type="submit"] {
+    padding: 12px;
+    font-size: 1rem; /* Ajusta o botão */
+    width: 100%;
+  }
+}

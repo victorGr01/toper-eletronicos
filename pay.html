@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Toper Eletrônicos - Pagamento</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&family=Roboto:wght@400;700&display=swap" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .container-pagamento {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      max-width: 700px;
+      margin: 40px auto;
+      text-align: center;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    h2 {
+      color: #00b978;
+      font-family: 'Nothing You Could Do', cursive;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+    }
+
+    form#freteForm input {
+      padding: 12px;
+      width: 90%;
+      max-width: 900px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+
+    form#freteForm button,
+    #btnEnviarDados {
+      background-color: #00b978;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 14px 30px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 10px;
+    }
+
+    form#freteForm button:hover,
+    #btnEnviarDados:hover {
+      background-color: #36ce99;
+    }
+
+    #resumo-compra {
+      margin-bottom: 20px;
+      font-size: 1.3rem;
+    }
+
+    #valor-total {
+      color: #00b978;
+      font-weight: bold;
+    }
+
+    #resultado {
+      margin-top: 20px;
+      padding: 20px;
+      background: #f9f9f9;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      line-height: 1.6;
+    }
+
+    #qrcode {
+      margin-top: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #btnEnviarDados {
+      display: none;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 500px) {
+      .container-pagamento {
+        padding: 20px;
+      }
+      h2 {
+        font-size: 2rem;
+      }
+    }
+form#freteForm button,
+#btnEnviarDados {
+  background-color: #00b978;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+  width: 95%;
+  min-height: 48px; /* Adiciona altura fixa */
+  min-width: 250px; /* Adiciona largura mínima fixa */
+  text-align: center;
+  box-sizing: border-box;
+}
+
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Toper Eletrônicos</h1>
+   <nav>
+      <a href="index.html">🏠 Início</a>
+      <a href="destques.html">💡 Destaques</a>
+      <a href="sobre.html">👤 Sobre</a>
+    </nav>
+  <div class="pesquisa-container">
+    <form id="form-pesquisa">
+      <input type="text" id="barra-pesquisa" placeholder="Buscar produtos..." />
+      <button type="submit">🔍</button>
+    </form>
+  </div>
+</header>
+
+<main>
+  <div class="container-pagamento">
+    <h2>Pagamento e Frete</h2>
+    <div id="resumo-compra">
+      <p>Total da compra: R$ <span id="valor-total">0,00</span></p>
+    </div>
+    <form id="freteForm">
+      <input type="text" id="Ncompleto" maxlength="28" required placeholder="Nome completo"/>
+      <input type="tel" id="tel" maxlength="15" required placeholder="Telefone"/>
+      <input type="text" id="cpfUser" maxlength="14" required placeholder="CPF"/>
+      <input type="text" id="cepDestino" maxlength="8" required placeholder="CEP"/>
+      <button type="submit">Calcular Frete e Gerar PIX</button>
+    </form>
+    <div id="resultado"></div>
+    <div id="qrcode"></div>
+    <button id="btnEnviarDados">concluir compra</button>
+  </div>
+</main>
+
+<footer>
+  &copy; 2025 Toper Eletrônicos. Todos os direitos reservados.
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="pay.js"></script>
+</script>
+
+</body>
+</html>

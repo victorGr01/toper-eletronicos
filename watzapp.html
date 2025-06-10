@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&family=Roboto:wght@400;700&display=swap" />
+  <title>Sobre Nós - Toper Eletrônicos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+
+    }
+    .pesquisa-container {
+      margin-top: 10px;
+      width: 100%;
+      max-width: 400px;
+  
+    }
+    #barra-pesquisa {
+      width: 80%;
+      padding: 8px;
+      border-radius: 4px 0 0 4px;
+      border: none;
+      font-size: 1rem;
+      border-radius: 4px 5px 5px 4px;
+             border: none;
+  outline: none;
+      
+    }
+    #form-pesquisa button {
+      padding: 6.8px;
+      border: none;
+      border-radius: 0 4px 4px 0;
+      background-color: #007a58;
+      color: white;
+      cursor: pointer;
+      font-size: 1rem;
+      position: absolute;
+      right: 45px;
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #00b978;
+    }
+
+    .info {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      line-height: 1.6;
+    }
+
+    footer {
+      background-color: #eee;
+      padding: 15px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+  
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .pesquisa-container {
+        width: 100%;
+        justify-content: flex-start;
+        margin-top: 10px;
+      }
+
+      nav {
+        width: 100%;
+        flex-wrap: wrap;
+      }
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background-color: #00b978;
+      padding: 15px 20px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    header h1 {
+      margin: 0;
+      font-family: 'Nothing You Could Do', cursive;
+      font-size: 1.8rem;
+    }
+   nav a {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: "Nothing You Could Do", cursive;
+  font-style: normal;
+  display: inline-block; /* Ajuda a controlar padding/margem sem que quebre layout */
+  transition: all 0.2s ease; /* Suaviza mudanças */
+  padding: 5px;
+    font-size: 20px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  background-color: #00b07e;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  border-radius: 2px;
+
+}
+
+
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Toper Eletrônicos</h1>
+    <nav>
+      <a href="index.html">🏠 Início</a>
+      <a href="destques.html">💡 Destaques</a>
+      <a href="sobre.html">👤 Sobre</a>
+    </nav>
+  <div class="pesquisa-container">
+    <form id="form-pesquisa">
+      <input type="text" id="barra-pesquisa" placeholder="Buscar produtos..." />
+      <button type="submit">🔍</button>
+    </form>
+  </div>
+</header>
+
+<main>
+  <div class="info">
+    <h2>Nosso Compromisso</h2>
+    <p>
+      ✔ Produtos originais<br>
+      ✔ Atendimento rápido e transparente<br>
+      ✔ Entregas para todo o Brasil<br>
+      ✔ Garantia de satisfação do cliente
+    </p>
+
+    <h2>Fale Conosco</h2>
+    <p>
+      Precisa de ajuda ou quer fazer uma sugestão? Fale com a gente pelo WhatsApp clicando <a href="watzapp.html" style="color: #00b978;">aqui</a>.
+    </p>
+    <div id="resumo-compra" style="margin-top: 30px; padding: 20px; background: #e9ffe9; border: 1px solid #00b978; border-radius: 10px;">
+  <h2>Resumo da Compra</h2>
+  <p><strong>Total:</strong> R$ <span id="valor-total">...</span></p>
+  <button onclick="finalizarDeVez()" style="margin-top: 10px; padding: 10px 20px; background: #00b978; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 1rem;">
+    Finalizar de vez
+  </button>
+
+</main>
+
+
+
+<footer>
+  &copy; 2025 Toper Eletrônicos. Todos os direitos reservados.
+</footer>
+<script>
+  // Mostra o total da compra
+  const total = localStorage.getItem('totalCompra');
+  document.getElementById('valor-total').textContent = total ? total.replace('.', ',') : '0,00';
+
+  // Função para "finalizar de vez"
+  function finalizarDeVez() {
+    window.location.href = 'pay.html'; // Volta para a loja
+  }
+</script>
+
+
+</body>
+</html>
